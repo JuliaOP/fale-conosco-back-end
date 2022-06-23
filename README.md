@@ -38,7 +38,7 @@ Temos a biblioteca __Dio__ para acessar os serviços. Para conectar o serviço d
 
 Para utilizar o aplicativo, basta baixar no aparelho Android a [faleConosco.apk](https://drive.google.com/file/d/1bUM-cqXdQkvfH5mfUA_xvJHFVV235sw5/view?usp=sharing), disponibilizada no Google Drive.
 
-O repositório público do aplicativo pode ser acessado no [GitHub](https://github.com/JuliaOP/create_account).
+O repositório público do aplicativo pode ser acessado no [GitHub](https://github.com/JuliaOP/fale_conosco).
 
 ### Back-End
 
