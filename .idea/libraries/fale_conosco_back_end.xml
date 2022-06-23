@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="fale-conosco-back-end">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.serverless/fale-conosco-back-end.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
