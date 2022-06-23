@@ -1,0 +1,58 @@
+Questões
+
+1. A solução deve ser disponibilizada em Cloud ou On-premise?
+
+    Em Cloud
+
+
+2. Considerando a participação de 4 pessoas técnicas para o desenvolvimento dessa
+solução, responda qual ferramenta acreditas ser apropriada para o controle de
+tarefas da equipe, a ferramenta é ágil?
+
+    Podemos usar o Trello, que funciona com o método de Kanban, com várias funcionalidades automatizadas.
+
+
+3. Você se sente capaz de liderar esta equipe? Por quê?
+
+    Eu me sentiria mais a vontade na liderança de uma equipe com foco em Front-end, que é minha área.
+
+
+4. Se pudesse sugerir uma melhoria, mudança ou oportunidade. O que seria?
+
+    Uma vez que foi implementada a solução como aplicativo mobile, poderiamos usar o Google Analytics para pegar algumas métricas de utilização
+    e comportamento do usuário.
+
+
+5. Acha válido esse desafio para o processo que está participando?
+
+    Inicialmente meu perfil é com foco em front-end e o processo seletivo parece mais voltado para nível de engenheiro e Tech Lead.
+    Se for uma questão de abrangência geral, poderia ser solicitado que se faça uma das partes do desafio e não tudo, uma vez que
+    estou buscando uma oportunidade front-end.
+
+------------------------------------------------------------------------------------------------------------------------
+EM RELAÇÃO AOS PONTOS 7 E 8 DO DESAFIO
+
+Ponto 7
+    * O próprio Serverless Dashboard possui coletas métricas da execução das funções e possibilita a visualização de loggers.
+    * Como a feature é de Cadastro, não existe a necessidade de Cache. Ele se faz necessário quando ocorrem consultas repetitivas.
+    Duas opções para essa questão seriam ElastiCache ou KeyDB (Fork do Redis).
+    * Para envio de emails, soluções como Amazon Simple Email Service (SES) ou SendGrid seriam adequados. Caso houvesse envio
+    de SMS, poderiamos usar serviços como o Twilio.
+    * Em questão de serviço de apoio à solução, uma vez que minha proposta é um aplicativo mobile, poderiamos utilizar o Google Analytics
+    para monitoramento.
+
+
+Ponto 8
+    * Como proposta de evolução do projeto, a utilização de FaaS se mostra mais efetiva com a possibilidade de aplicação de uma Onion Architecture
+    não muito rebuscada, pois cada endpoint resolve um único problema.
+
+    Esquema de Onion Architecture:
+
+    Src
+    --> domain (Domínio da aplicação, como validators, classes, abstracts)
+    --> core (Ligação de interfaces)
+    --> repository (Manipulação semântica do banco)
+    --> infrastructure (Conexão com serviços externos)
+    --> service (serviço)
+    --> controller (porta de entrada e validação de estruturas)
+
