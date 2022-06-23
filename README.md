@@ -11,40 +11,65 @@ authorName: 'Serverless, inc.'
 authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
 -->
 
-# Teste XXXXXXX
+# Teste BEMOL Digital
 
-Esse teste foid eito balbalbalb
+Esse teste consiste em uma solução para a Criação de Contas de Usuário, dentro do sistema __FaleConosco__, um canal digital para interação com os clientes.
+
+
 
 ## Dados tecnicos
 
-Esse teste foi realizado utilizando o framework serverless com temple "node Express.js API with DynamoDB"
+### Front-End
+O front-end para este teste foi implementado utilizando o Framework Flutter, sobre a linguagem Dart. Temos o __app mobile FaleConosco__, cuja instalação e utilização será descrita mais abaixo. 
+
+
+O formulário para registro da conta do usuário conta com os seguintes campos:
+* Nome
+* Email
+* Telefone
+* CPF/CNPJ
+* Campos de Endereço
+
+Nestes temos os campos __Nome__ e __Email__ ou __Telefone__ como campos obrigatórios.
+
+Os campos de __Endereço__ contam com autopreenchimento pela utilização da API __ViaCep__ ao informar primeiramente o Cep.
+
+Temos a biblioteca __Dio__ para acessar os serviços. Para conectar o serviço de registro do usuário, temos uma tela final para a entrada do __endpoint__ específico, como medida provisória para bom funcionamento da feature.
+
+Para utilizar o aplicativo, basta baixar no aparelho Android a [faleConosco.apk](https://www.google.com.br/).
+
+O repositório público do aplicativo pode ser acessado no [GitHub](https://github.com/JuliaOP/create_account).
+
+### Back-End
+
+O back-end para este teste foi implementado utilizando o Framework Serverless com template "Node Express.js API with DynamoDB".
 
 
 ## Usage
 
-Para fazer deploy da aplicação sera necessario:
-* node.js (foi utilizaod no teste a versao [16.15.1LTS](https://nodejs.org/dist/v16.15.1/node-v16.15.1-x64.msi)
-* aws account (caso não tenha counta na AWS click [aqui](https://portal.aws.amazon.com/billing/signup) para criar uma conta)
-* serverless account (caso não tenha counta do dashboard do serverless framework click [aqui](https://app.serverless.com/) para criar uma conta)
+Para fazer deploy da aplicação sera necessário:
+* node.js (foi utilizado no teste a versão [16.15.1LTS](https://nodejs.org/dist/v16.15.1/node-v16.15.1-x64.msi)
+* aws account (caso não tenha conta na AWS, [clique aqui](https://portal.aws.amazon.com/billing/signup) para criar uma conta)
+* serverless account (caso não tenha conta do Dashboard do Serverless Framework, [clique aqui](https://app.serverless.com/) para criar uma conta)
 
 ### Deployment
 
-Instale as dependedncias do projeto:
+Instale as dependências do projeto:
 
 ```
 npm install
 ```
 
-and then deploy with:
+e faça o deploy:
 
 ```
 serverless deploy
 ```
 
-No processo de deploy sera solicitado que se faca login no dashboard do serverless e tambem dentro do dashboard se crie uma libercao na conta da AWS para que o deplopy seja feito.
-Com esse passos sendo bem sucessedidos o a seguinte mensagem deve ser exebida:
+No processo de deploy será solicitado que se faça login no Dashboard do Serverless e também que dentro do Dashboard se crie uma liberação na conta da AWS para que o deploy seja feito.
+Com esses passos sendo bem sucedidos a seguinte mensagem deve ser exibida:
 
-__OBS__: É possivel Fazer o dedploy localmente caso queira
+__OBS__: É possível fazer o deploy localmente caso queira
 
 ```bash
 Deploying fale-conosco-back-end to stage dev (us-east-1)
@@ -56,11 +81,11 @@ functions:
   api: fale-conosco-back-end-dev-api (1.8 MB)
 ```
 
-_Note_: Tome cuidado pois dessa forma seu endpoint na AWS esta publicamente exposto.
+_Note_: Tome cuidado pois dessa forma seu endpoint na AWS está publicamente exposto.
 
 ### Invocation
 
-O endpoint POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/users recebe os seguintes parametros ondo os parametros name e email ou phone sao obrigatorios.
+O endpoint POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/users recebe os seguintes parâmetros onde os parâmetros __name__ e __email__ ou __phone__ são obrigatórios.
 
 ```json
 {
@@ -80,7 +105,7 @@ O endpoint POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/users rec
 }
 ```
 
-Caso a chamada do endpoind seja bem sucecedida um uuid sera gerado e staus code 201 (CREATED) sera retornado juntamente com o objeto criado.
+Caso a chamada do endpoind seja bem sucedida um __uuid__ será gerado e status code 201 (CREATED) será retornado juntamente com o objeto criado.
 
 
 ```json
@@ -91,7 +116,7 @@ Caso a chamada do endpoind seja bem sucecedida um uuid sera gerado e staus code 
 }
 ```
 
-Caso um dos parametros obrigatorio ano seja enviado o seguinte exemplo de erro sera retornado.
+Caso um dos parâmetros obrigatórios não seja enviado, o seguinte exemplo de erro será retornado:
 
 ```json
 {
@@ -109,8 +134,8 @@ Caso um dos parametros obrigatorio ano seja enviado o seguinte exemplo de erro s
 }
 ```
 
-Uma rota para checagem daos dados foi feita tbm e para testela utilize GET https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/users/:userId
-Com isso o seguinte object deve ser retornado
+Uma rota para checagem dos dados foi implementada e para testá-la utilize GET https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/users/:userId
+Com isso, o seguinte objeto deve ser retornado:
 
 ```json
 {
@@ -120,7 +145,7 @@ Com isso o seguinte object deve ser retornado
 }
 ```
 
-Caso nao seja encontrado o registro sera retornado o seguinte erro.
+Caso nao seja encontrado o registro, será retornado o seguinte erro:
 
 ```bash
 {"error":"Could not find user with provided \"userId\""}
