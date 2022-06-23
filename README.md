@@ -36,7 +36,7 @@ Os campos de __Endereço__ contam com autopreenchimento pela utilização da API
 
 Temos a biblioteca __Dio__ para acessar os serviços. Para conectar o serviço de registro do usuário, temos uma tela final para a entrada do __endpoint__ específico, como medida provisória para bom funcionamento da feature.
 
-Para utilizar o aplicativo, basta baixar no aparelho Android a [faleConosco.apk](https://drive.google.com/file/d/1bUM-cqXdQkvfH5mfUA_xvJHFVV235sw5/view?usp=sharing), disponibilizada no Google Drive.
+Para utilizar o aplicativo, basta baixar no aparelho Android a [faleConosco.apk](https://drive.google.com/file/d/18KA7afOsmQwpi76jzC-pE4sZN3xbshGj/view?usp=sharing), disponibilizada no Google Drive.
 
 O repositório público do aplicativo pode ser acessado no [GitHub](https://github.com/JuliaOP/fale_conosco).
 
